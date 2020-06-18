@@ -8,17 +8,17 @@ import { history } from '../../history'
 import './Login.css'
 
 const Login = () => {
-    const handleSubmit = values => {
+    const handleSubmit = values =>{
         axios.post('https://gerenciador-de-tarefas-codex.herokuapp.com/api/user/login', values)
-            .then(resp => {
+            .then( resp =>{
                 const { data } = resp
-                if (data) {
-                    localStorage.setItem('app-token', data)
-                    history.push('/')
-                }
-            })
-    }
 
+                if(data) {
+                    localStorage.setItem('auth-token', data)
+                    history.push('/')
+               
+        }}
+    )}
     const validations = yup.object().shape({
         email: yup.string().email().required(),
         password: yup.string().min(6).required()
