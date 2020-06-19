@@ -1,0 +1,80 @@
+li{
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    grid-template-rows: 3rem;
+    grid-template-areas: "name p btn";
+    width: 100%;
+    margin: 0px auto;
+    height: 10rem;
+    background: white;
+    margin-top: 5px;
+
+}
+
+ul{
+    margin-top: 2rem;
+    list-style-type: none;
+}
+
+
+.t-name{
+    display: inline-block;
+    grid-area: name;
+    align-self: center;
+    justify-self: start;
+    margin-left: 1rem;
+}
+
+.t-priority{
+    display: inline-block;
+    margin-left: 4rem;
+    grid-area: p;
+    align-self: center;
+    justify-self: center;
+}
+.t-description{
+    display: inline-block;
+    grid-area: description;
+    align-self: center;
+    justify-self: start;
+    margin-left: 1rem;
+}
+#addTask{
+    background: #1D79F2;
+    border-radius: 8px;
+    text-align: center;
+}
+#addTask{
+    width: 80%;
+    margin: 3rem auto 20px auto;
+}
+
+#addTask{
+    padding-top: 5px;
+}
+
+
+
+#addTask input[type="button"]{
+    border: none;
+    background:#0BBA99;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 5px;
+    height: 2rem;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+#addTask input[type="button"]:hover{
+    cursor: pointer;
+    background: #858685;
+}
+
+
+#main{
+    width: 40%;
+    margin: 0px auto;
+    font-weight: 500;
+}

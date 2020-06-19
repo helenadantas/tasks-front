@@ -11,11 +11,12 @@ const Register = () => {
     const handleSubmit = values => {
         axios.post('https://gerenciador-de-tarefas-codex.herokuapp.com/api/user/register/', values)
             .then(resp => {
-                const { data } = resp
-                if (data) {
+                
                     history.push('/login')
                 }
-            })
+            ).catch(function(err){
+                alert('Email already exist\nResposta do servidor: '+err);
+            });
     }
 
     const validations = yup.object().shape({
@@ -24,8 +25,8 @@ const Register = () => {
     })
     return (
         <>
-            <h1>Register</h1>
-            <p>Fill the fields to create a new user</p>
+            <h1>Registro</h1>
+            <p>Digite as informações abaixo para se registrar</p>
             <Formik
                 initialValues={{}}
                 onSubmit={handleSubmit}
@@ -33,7 +34,8 @@ const Register = () => {
             >
                 <Form className="Login">
                     <div className="Login-Group">
-                        <Field
+                        <Field 
+                            placeholder="Nome"
                             name="firstName"
                             className="Login-Field"
                         />
@@ -46,6 +48,7 @@ const Register = () => {
 
                     <div className="Login-Group">
                         <Field
+                            placeholder="Email"
                             name="email"
                             className="Login-Field"
                         />
@@ -58,6 +61,7 @@ const Register = () => {
                     </div>
                     <div className="Login-Group">
                         <Field
+                            placeholder="Senha"
                             name="password"
                             className="Login-Field"
                         />

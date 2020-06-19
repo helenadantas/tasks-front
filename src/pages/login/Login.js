@@ -15,7 +15,7 @@ const Login = () => {
 
                 if(data) {
                     localStorage.setItem('auth-token', data)
-                    history.push('/')
+                    history.push("/")
                
         }}
     )}
@@ -26,7 +26,7 @@ const Login = () => {
     return (
         <>
             <h1>Login</h1>
-            <p>Fill the fields to continue</p>
+            <p>Digite seus dados para continuar</p>
             <Formik
                 initialValues={{}}
                 onSubmit={handleSubmit}
@@ -37,6 +37,7 @@ const Login = () => {
                         <Field
                             name="email"
                             className="Login-Field"
+                            placeholder="Email"
                         />
                         <ErrorMessage
                             component="span"
@@ -48,6 +49,7 @@ const Login = () => {
                         <Field
                             name="password"
                             className="Login-Field"
+                            placeholder="Senha"
                         />
                         <ErrorMessage
                             component="span"
